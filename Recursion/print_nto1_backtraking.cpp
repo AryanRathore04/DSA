@@ -1,4 +1,5 @@
-// Print linearly from 1 to N (But by Backtracking)
+// Print linearly from N to 1 (But by Backtracking)
+
 
 #include <iostream>   // input/output
 #include <vector>     // dynamic arrays
@@ -6,14 +7,16 @@
 using namespace std;
 
 void backtracking(int i, int n){
-    if(i < 1) return;
+    if(i > n) return;
 
-    backtracking(i-1, n);
+    backtracking(i+1, n);
     cout << i << endl;
 }
 
 int main(){
     int n;
     cin >> n;
-    backtracking(n,n);
+
+    backtracking(1,n);
+
 }
