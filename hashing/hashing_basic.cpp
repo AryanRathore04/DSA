@@ -1,4 +1,7 @@
-// Counts frequency of numbers and answers queries instantly using an arrat
+// Counts frequency of numbers and answers queries instantly using an array
+
+// arr[1e6] -----> only if inside main declare
+// arr[1e7] or arr[1e7 + 1]  ------- globally declare
 
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays
