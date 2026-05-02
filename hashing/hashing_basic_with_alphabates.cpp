@@ -7,13 +7,33 @@
 using namespace std;
 
 int main(){
+    // string s;
+    // cin >> s;
+
+    // //precompute
+    // int hash[26] = {0};
+    // for(int i = 0; i < s.size(); i++){
+    //     hash[s[i] - 'a']++;
+    // }
+
+    // int q; //number of queries
+    // cin >> q;
+    // while(q--){
+    //     char c; // what are the queries
+    //     cin >> c;
+    //     //fetch
+    //     cout << hash[c-'a'] << endl;
+    // }
+
+
+
     string s;
     cin >> s;
 
     //precompute
-    int hash[26] = {0};
+    int hash[256] = {0}; // now in this we include every characters
     for(int i = 0; i < s.size(); i++){
-        hash[s[i] - 'a']++;
+        hash[s[i]]++; // now we dont need to minus it with the 'a' cause we cause if it is a it goes to 97 which is position in the ASCII
     }
 
     int q; //number of queries
@@ -22,6 +42,6 @@ int main(){
         char c; // what are the queries
         cin >> c;
         //fetch
-        cout << hash[c-'a'] << endl;
+        cout << hash[c] << endl;
     }
 }
