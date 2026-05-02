@@ -25,9 +25,9 @@ int main(){
 
 
     int q;
-    cin >> q;
+    cin >> q; // total number of queries
     while(q--){
-        int number;
+        int number; // what are the queries
         cin >> number;
         //fetch
         cout << hash[number] << endl;
