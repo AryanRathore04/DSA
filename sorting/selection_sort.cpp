@@ -13,7 +13,6 @@ void selection_sort(int arr[], int n){
                 mini = j;
             }
         }
-
         int temp = arr[mini];
         arr[mini] = arr[i];
         arr[i] = temp;
