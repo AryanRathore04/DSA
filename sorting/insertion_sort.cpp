@@ -1,4 +1,4 @@
-// Write a program to sort an array of integers in ascending order using bubble insertion algorithm.
+// Write a program to sort an array of integers in ascending order using insertion sort algorithm.
 
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays
