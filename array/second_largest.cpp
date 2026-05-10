@@ -7,20 +7,21 @@
 using namespace std;
 
 int largestNumber(vector<int> &arr, int n){
-    int largest = arr[0];
-    for(int i = 0; i < n; i++){
-        if(arr[i] > largest){
-            largest = arr[i];
-        }
-    }
-
+    int largest = INT_MIN;
     int sLargest = INT_MIN;
     for(int i = 0; i < n; i++){
-        if(arr[i] > sLargest && arr[i] != largest){
-            sLargest = arr[i];
-        }
+       if(arr[i] > largest){
+        sLargest = largest;
+        largest = arr[i];
+       }
+
+       else if(arr[i] > sLargest && arr[i] != largest){
+        sLargest = arr[i];
+       }
     }
+
     return sLargest;
+
 }
 
 int main(){
