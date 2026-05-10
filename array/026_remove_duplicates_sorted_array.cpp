@@ -1,8 +1,14 @@
 // LeetCode 26
 // Remove Duplicates from Sorted Array
-// Approach: Two Pointers
+// Topic: Arrays, Two Pointers
 // Time Complexity: O(n)
 // Space Complexity: O(1)
+
+// Idea:
+// i -> tracks unique section
+// j -> scans array
+// when new unique found:
+// nums[i+1] = nums[j]
 
 #include <vector>;
 using namespace std;
