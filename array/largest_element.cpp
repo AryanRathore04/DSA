@@ -3,7 +3,7 @@
 #include <algorithm> // sort, max, etc.
 using namespace std;
 
-int largestNumber(int arr[], int n){
+int largestNumber(vector<int> &arr, int n){
     int largest = arr[0];
     for(int i = 0; i < n; i++){
         if(arr[i] > largest){
@@ -16,7 +16,7 @@ int largestNumber(int arr[], int n){
 int main(){
     int n;
     cin >> n;
-    int arr[n];
+    vector<int> arr(n);
 
     for(int i = 0; i < n; i++){
         cin >> arr[i];
@@ -25,4 +25,6 @@ int main(){
     int largest = largestNumber(arr, n);
 
     cout << largest;
+
+    return 0;
 }
