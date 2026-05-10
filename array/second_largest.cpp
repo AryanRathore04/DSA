@@ -1,8 +1,9 @@
-// Find the largest number
+// Find the second largest number
 
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays
 #include <algorithm> // sort, max, etc.
+#include <climits> 
 using namespace std;
 
 int largestNumber(vector<int> &arr, int n){
@@ -12,7 +13,14 @@ int largestNumber(vector<int> &arr, int n){
             largest = arr[i];
         }
     }
-    return largest;
+
+    int sLargest = INT_MIN;
+    for(int i = 0; i < n; i++){
+        if(arr[i] > sLargest && arr[i] != largest){
+            sLargest = arr[i];
+        }
+    }
+    return sLargest;
 }
 
 int main(){
@@ -24,9 +32,9 @@ int main(){
         cin >> arr[i];
     }
 
-    int largest = largestNumber(arr, n);
+    int sLargest = largestNumber(arr, n);
 
-    cout << largest;
+    cout << sLargest;
 
     return 0;
 }
