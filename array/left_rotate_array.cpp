@@ -1,3 +1,5 @@
+// This solution is left rotate the array once 
+
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays
 #include <algorithm> // sort, max, etc.
