@@ -1,4 +1,4 @@
-// This is union sorted array from where using 2 different array we need to make one union array with unique numbers from both ehe array
+// This is union sorted array from where using 2 different array we need to make one union array with unique numbers from both the array
 
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays

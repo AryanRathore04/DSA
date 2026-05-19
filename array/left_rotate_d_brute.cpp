@@ -14,7 +14,7 @@ void leftRotateByD(int arr[], int n, int d){
     temp[i] = arr[i];
    }
 
-   // This loop is for shifting the element from dth to nth to the staring
+   // This loop is for shifting the element from dth to nth to the starting
    for(int i = d; i < n; i++){
     arr[i - d] = arr[i];
    }
