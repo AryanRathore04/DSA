@@ -1,4 +1,5 @@
 // This solution is left rotate the array once 
+// topic: Arrays,
 
 #include <iostream>  // input/output
 #include <vector>    // dynamic arrays
