@@ -1,3 +1,7 @@
+// Problem: Majority Element
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)
+
 #include <iostream>
 #include <vector>
 using namespace std;
