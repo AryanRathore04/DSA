@@ -28,3 +28,34 @@ class solution {
         return maxi;
     }
 };
+
+
+class Solution {
+    public:
+    vector<int> maxSubarraySumWithArray(vector<int>& nums){
+        long long sum = 0, maxi = LONG_MIN;
+        int start = 0, end = 0;
+        int startIndex = 0, endIndex = 0;
+        for(int i = 0; i < nums.size(); i++){
+            if(sum == 0) start = i;
+            sum += nums[i];
+            if(sum > maxi){
+                maxi = sum;
+                startIndex = start;
+                endIndex = i;
+            }
+
+            if(sum < 0){
+                sum = 0;
+            }
+        }
+
+        vector<int> ans;
+        for(int i = startIndex; i <= endIndex; i++){
+            ans.push_back(nums[i]);
+        }
+
+
+        return ans;
+    }
+};
