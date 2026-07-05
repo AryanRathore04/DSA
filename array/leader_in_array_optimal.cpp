@@ -1,3 +1,13 @@
+// Leader in an array optimal approach
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+// Approach:
+// 1. Initialize a variable to keep track of the maximum element seen so far.
+// 2. Iterate through the array from right to left.
+// 3. If the current element is greater than the maximum element seen so far, it is a leader. Add it to the result array and update the maximum element.
+// 4. Return the result array.
+
 #include<vector>
 #include<iostream>
 #include<climits>
@@ -15,6 +25,7 @@ class Solution{
          }
             maxi = max(maxi, a[i]);
         }
+        reverse(ans.begin(), ans.end());
         return ans;
     }
 };
