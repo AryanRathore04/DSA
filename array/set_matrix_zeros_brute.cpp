@@ -1,3 +1,11 @@
+// Problem: Set Matrix Zeros Brute force solution
+// Time Complexity: O(n)^3
+// Space Complexity: O(1)
+
+// Approach: 1. Iterate through the matrix and for every element that is 0, mark its entire row and column with -1 (or any other number that is not present in the matrix).
+// 2. Iterate through the matrix again and replace all -1s with 0s.
+// 3. This approach uses O(1) space as we are modifying the matrix in place.
+
 #include <iostream>
 #include <vector>
 using namespace std;
