@@ -1,4 +1,4 @@
-// Rotate a matrix by 90 degrees clockwise
+// Rotate a matrix by 90 degrees clockwise Brute force approach
 // Time Complexity: O(n*m)
 // Space Complexity: O(n*m)
 
@@ -10,12 +10,11 @@ using namespace std;
 
 void rotateMatrix(vector<vector<int>>& matrix) {
     int n = matrix.size();
-    int m = matrix[0].size();
 
-    vector<vector<int>> ans(n, vector<int>(m));
+    vector<vector<int>> ans(n, vector<int>(n));
     // Transpose the matrix
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+        for (int j = 0; j < n; j++) {
             ans[j][n - 1 - i] = matrix[i][j];
         }
     }
