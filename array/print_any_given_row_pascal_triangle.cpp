@@ -1,5 +1,5 @@
 // Print any given row of Pascal's Triangle
-// Time Complexity: O(r) - Loop runs r times
+// Time Complexity: O(rowIndex) - Loop runs rowIndex times
 // Space Complexity: O(1) - Constant space used
 
 // Approach: We calculate the elements of the given row in Pascal's Triangle using the formula for combinations (nCr). We start with the first element as 1 and iteratively compute the next elements using the relationship between consecutive elements in the row. This avoids calculating factorials directly and reduces the risk of overflow.
