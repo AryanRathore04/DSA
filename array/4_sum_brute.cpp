@@ -1,3 +1,9 @@
+// Problem: 4Sum Brute Force Approach
+// Time Complexity: O(n^4) - The four nested loops iterate through the array to find all possible quadruplets.
+// Space Complexity: O(n) - The set is used to store unique quadruplets, which can take up to O(n) space in the worst case.
+
+// Approach: The brute-force approach involves using four nested loops to iterate through all possible quadruplets in the array. For each quadruplet, we check if the sum is equal to the target. To avoid duplicates, we store the quadruplets in a set after sorting them. Finally, we convert the set to a vector and return it as the result.
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
