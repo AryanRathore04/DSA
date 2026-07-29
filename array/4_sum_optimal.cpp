@@ -13,6 +13,8 @@ class Solution{
     vector<vector<int>> fourSum(vector<int>& nums, int target){
         int n = nums.size();
         vector<vector<int>> result;
+        sort(nums.begin(), nums.end()); // Sort the array to facilitate the two-pointer approach and duplicate skipping
+
         for(int i = 0; i < n; i++){
             if(i > 0 && nums[i] == nums[i - 1]) continue; // Skip duplicates for the first number
             for(int j = i + 1; j < n; j++){
