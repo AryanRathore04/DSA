@@ -7,6 +7,8 @@
 // Output: YES
 // Explanation: Sam can buy 4 pages book and 1 page book.
 
+// Approach: The optimal approach involves iterating through the input array while maintaining a map to track the number of pages in each book. For each book, we calculate the number of pages needed to reach the target and check if that number exists in the map. If it does, we return "YES". If we finish iterating through the array without finding a match, we return "NO".
+
 #include <iostream>
 #include <vector>
 #include <unordered_set>
