@@ -1,3 +1,9 @@
+// Problem: Write a function to search for a target value in a sorted array using binary search.
+// Time Complexity: O(log n) - The binary search algorithm divides the search space in half with each iteration, leading to logarithmic time complexity.
+// Space Complexity: O(1) - The algorithm uses a constant amount of space for variables, regardless of the input size.
+
+// Approach: The binary search algorithm works by maintaining two pointers, low and high, which represent the current search space. In each iteration, we calculate the middle index and compare the middle element with the target value. If they are equal, we return the index. If the target is greater than the middle element, we move the low pointer to mid + 1; otherwise, we move the high pointer to mid - 1. This process continues until the target is found or the search space is exhausted.
+
 #include<iostream>
 #include<vector>
 using namespace std;
