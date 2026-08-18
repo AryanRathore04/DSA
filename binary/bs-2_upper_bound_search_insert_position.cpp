@@ -3,7 +3,7 @@
 // Time Complexity: O(log n)
 // Space Complexity: O(1)
 
-// Approach: The binary search algorithm works by maintaining two pointers, low and high, which represent the current search space. In each iteration, we calculate the middle index and compare the middle element with the target value. If the middle element is greater than or equal to the target, we update the answer to mid and move the high pointer to mid - 1. Otherwise, we move the low pointer to mid + 1. This process continues until the search space is exhausted. Finally, we return the answer which represents the index where the target would be inserted in order.
+// Approach: The binary search algorithm works by maintaining two pointers, low and high, which represent the current search space. In each iteration, we calculate the middle index and compare the middle element with the target value. If the middle element is greater than or equal to the target, we update the answer to mid and move the high pointer to mid - 1. If the middle element is less than the target, we move the low pointer to mid + 1. This process continues until the search space is exhausted. Finally, we return the answer which represents the index where the target would be inserted in order.
 
 #include <iostream>
 #include <vector>
@@ -19,7 +19,7 @@ class Solution {
         while (low <= high) {
             int mid = (low + high) / 2;
 
-            if (nums[mid] >= x) {
+            if (nums[mid] > x) {
                 ans = mid;
                 high = mid - 1;
             } else {
