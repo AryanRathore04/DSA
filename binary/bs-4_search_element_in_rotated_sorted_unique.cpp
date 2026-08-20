@@ -1,3 +1,10 @@
+// Problem: Search an element in a rotated sorted array with unique elements
+
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+
+// Approach: We can use binary search to find the element in the rotated sorted array. We will check if the left half or right half is sorted and then decide which half to search based on the value of the target element.
+
 #include <iostream>
 #include <vector>
 using namespace std;
