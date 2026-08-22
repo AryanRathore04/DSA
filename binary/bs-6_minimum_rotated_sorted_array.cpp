@@ -1,3 +1,9 @@
+// Problem: Find the minimum element in a rotated sorted array
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+
+// Approach: We can use binary search to find the minimum element in the rotated sorted array. We will check if the left half or right half is sorted and then decide which half to search based on the values of the elements.
+
 #include <iostream>
 #include <vector>
 #include <climits>
