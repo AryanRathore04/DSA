@@ -1,3 +1,14 @@
+// Problem: Find the single element in a sorted array where every other element appears twice
+// Time Complexity: O(log n)
+// Space Complexity: O(1)
+
+// Approach: 1. Initialize low and high pointers to the start and end of the array respectively.
+// 2. While low is less than or equal to high, calculate the mid index
+// 3. If the mid element is not equal to its neighbors, then it is the single element, so we return it
+// 4. If the mid element is equal to its left neighbor and mid is odd, or if the mid element is equal to its right neighbor and mid is even, then the single element is in the right half of the array, so we update low to mid + 1
+// 5. Otherwise, the single element is in the left half of the array, so we update high to mid - 1
+// 6. Return -1 if no single element is found (this line will never be reached if the input is valid as per the problem statement)
+
 #include <iostream>
 #include <vector>
 using namespace std;
