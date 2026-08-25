@@ -13,12 +13,13 @@ using namespace std;
 
 class Solution {
     public:
-    // Function to find the maximum element in the vector
+    // Function to find the maximum number of bananas in the piles
         int findMax(vector<int> &v){
             int maxi = INT_MIN;
             int n = v.size();
+            // Loop through the vector to find the maximum value
             for(int i = 0; i < n; i++){
-                maxi = max(maxi, v[i]);
+                maxi = max(maxi, v[i]); // Update maxi if the current element is greater
             }
             return maxi;
         }
