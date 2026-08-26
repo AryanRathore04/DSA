@@ -18,19 +18,26 @@ class Solution {
         int cnt = 0;
         int noOfBouquets = 0;
         for(int i = 0; i < bloomDay.size(); i++){
+            // If the bloom day of the flower is less than or equal to mid, we can use it to make a bouquet
             if(bloomDay[i] <= mid){
                 cnt++;
             } else {
+                // If the bloom day of the flower is greater than mid, we can't use it to make a bouquet, so we will check how many bouquets we can make with the flowers we have counted so far.
                 noOfBouquets += (cnt / r);
+                // Reset the count of flowers for the next bouquet
                 cnt = 0;
             }
         }
+        // After the loop, we need to check if there are any remaining flowers that can be used to make a bouquet
         noOfBouquets += (cnt / r);
+        // Finally, we will check if the number of bouquets we can make is greater than or equal to b. If it is, then we can make b bouquets in mid days, otherwise we can't.
         return noOfBouquets >= b;
     }
 
     int roseGarden(vector<int> bloomDay, int r, int b){
+        // Calculate the total number of flowers needed to make b bouquets with r flowers each
         long long val = r * 1LL * b * 1LL;
+        // If the total number of flowers needed is greater than the number of flowers we have, then it is impossible to make b bouquets, so we will return -1.
         if(bloomDay.size() < val) return -1;
 
         int mini = INT_MAX, maxi = INT_MIN;
@@ -40,10 +47,12 @@ class Solution {
         }
 
         int low = mini, high = maxi;
+        // Perform binary search to find the minimum days to make b bouquets
         while(low <= high){
             int mid = low + (high - low) / 2;
 
             if(possible(bloomDay, r, b, mid)){
+                // If we can make b bouquets in mid days, then we will try to find the minimum days by reducing the high value to mid-1.
                 high = mid - 1;
             } else {
                 low = mid + 1;
@@ -56,7 +65,7 @@ class Solution {
 
 int main() {
     Solution sol;
-   vector<int> bloomDay = {1, 10, 3, 10, 2};
+    vector<int> bloomDay = {1, 10, 3, 10, 2};
     int r = 1; // number of flowers per bouquet
     int b = 3; // number of bouquets needed
     int result = sol.roseGarden(bloomDay, r, b);
