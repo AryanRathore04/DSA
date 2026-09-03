@@ -26,10 +26,10 @@ class Solution {
         for(int gasStation = 1; gasStation <= k; gasStation++){
             auto tp = pq.top(); // Get the section with the maximum length
             pq.pop(); // Remove it from the heap
-            long double maxSection = tp.second; // Get the index of the maximum section
-            howMany[maxSection]++; // Place a gas station in this section
-            long double newSectionLength = (arr[maxSection+1] - arr[maxSection]) / (long double)(howMany[maxSection] + 1); // Calculate the new section length after placing the gas station
-            pq.push({newSectionLength, maxSection}); // Push the updated section length back into the heap
+            int maxIndex = tp.second; // 
+            howMany[maxIndex]++; // Place a gas station in this section
+            long double newSectionLength = (arr[maxIndex+1] - arr[maxIndex]) / (long double)(howMany[maxIndex] + 1); // Calculate the new section length after placing the gas station
+            pq.push({newSectionLength, maxIndex}); // Push the updated section length back into the heap
         }
         return pq.top().first; // Return the maximum section length
     }
