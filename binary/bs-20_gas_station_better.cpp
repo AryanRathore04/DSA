@@ -8,30 +8,67 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <climits>
+#include <queue>
 using namespace std;
 
 class Solution {
-    public:
-    long double minimiseMaxDistance(vector<int> &arr, int k){
+public:
+
+    long double minimiseMaxDistance(vector<int>& arr, int k) {
+
         int n = arr.size();
-        vector<int> howMany(n-1, 0);
-        priority_queue<pair<long double, int>> pq; // Max-heap to keep track of the maximum section length and its index
-        for(int i = 0; i < n-1; i++){
-            long double diff = (arr[i+1] - arr[i]);
-            pq.push({diff, i}); // Push the initial section lengths into the max-heap
+
+        // howMany[i] tells us how many new gas stations
+        // have been placed between arr[i] and arr[i+1]
+        vector<int> howMany(n - 1, 0);
+
+        // Max-heap:
+        // first  = current maximum section length
+        // second = index of the original gap
+        priority_queue<pair<long double, int>> pq;
+
+
+        // Put all original gaps into the max-heap
+        for(int i = 0; i < n - 1; i++) {
+
+            long double diff = arr[i + 1] - arr[i];
+
+            pq.push({diff, i});
         }
 
-        for(int gasStation = 1; gasStation <= k; gasStation++){
-            auto tp = pq.top(); // Get the section with the maximum length
-            pq.pop(); // Remove it from the heap
-            int maxIndex = tp.second; // 
-            howMany[maxIndex]++; // Place a gas station in this section
-            long double newSectionLength = (arr[maxIndex+1] - arr[maxIndex]) / (long double)(howMany[maxIndex] + 1); // Calculate the new section length after placing the gas station
-            pq.push({newSectionLength, maxIndex}); // Push the updated section length back into the heap
+
+        // Add k new gas stations
+        for(int gasStation = 1; gasStation <= k; gasStation++) {
+
+            // Get the largest current section
+            auto tp = pq.top();
+
+            // Remove it temporarily
+            pq.pop();
+
+            // tp.first  = current section length
+            // tp.second = index of the original gap
+            int maxIndex = tp.second;
+
+
+            // Add one new gas station to this gap
+            howMany[maxIndex]++;
+
+
+            // Calculate the new maximum section
+            // inside this original gap
+            long double newSectionLength =
+                (arr[maxIndex + 1] - arr[maxIndex])
+                / (long double)(howMany[maxIndex] + 1);
+
+
+            // Put the updated section back into the heap
+            pq.push({newSectionLength, maxIndex});
         }
-        return pq.top().first; // Return the maximum section length
+
+
+        // The largest remaining section is at the top
+        return pq.top().first;
     }
 };
 
