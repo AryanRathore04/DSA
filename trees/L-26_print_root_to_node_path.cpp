@@ -1,3 +1,14 @@
+// Problem: Print path from root to a given node in a binary tree
+// Time Complexity: O(n), where n is the number of nodes in the binary tree
+// Space Complexity: O(h), where h is the height of the binary tree (for the recursion stack)
+
+// Approach:
+// 1. We will perform a depth-first search (DFS) traversal of the binary tree
+// 2. We will maintain a vector to store the path from the root to the current node
+// 3. If we reach the target node, we will return true and the path
+// 4. If we reach a leaf node and haven't found the target, we will backtrack and remove the current node from the path
+
+
 #include <iostream>
 #include <vector>
 using namespace std;
