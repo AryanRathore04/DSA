@@ -1,4 +1,4 @@
-// Problem: Count Complete Tree Nodes
+// Leetcode 222 - Count Complete Tree Nodes
 // Time Complexity: O(log(n)^2)
 // Space Complexity: O(log(n)) due to recursion stack
 
